@@ -46,6 +46,7 @@ bitflags = "2"
 crossbeam-channel = "0.5"
 url = "2"
 dpi = "0.1"
+gtk-layer-shell = "0.8.0"
 
 [dev-dependencies]
 image = "0.25"

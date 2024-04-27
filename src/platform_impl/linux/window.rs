@@ -18,6 +18,8 @@ use gtk::{
 };
 use gtk::{prelude::*, Settings};
 
+use gtk_layer_shell::LayerShell;
+
 use crate::{
   dpi::{LogicalPosition, LogicalSize, PhysicalPosition, PhysicalSize, Position, Size},
   error::{ExternalError, NotSupportedError, OsError as RootOsError},
@@ -86,6 +88,8 @@ impl Window {
     }
 
     let window = window_builder.build();
+
+    window.init_layer_shell();
 
     let window_id = WindowId(window.id());
     event_loop_window_target

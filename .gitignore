@@ -11,3 +11,4 @@ rls/
 *.js
 #*#
 .DS_Store
+.direnv/

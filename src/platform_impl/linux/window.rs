@@ -20,6 +20,8 @@ use raw_window_handle::{
   XlibWindowHandle,
 };
 
+use gtk_layer_shell;
+
 use crate::{
   dpi::{LogicalPosition, LogicalSize, PhysicalPosition, PhysicalSize, Position, Size},
   error::{ExternalError, NotSupportedError, OsError as RootOsError},
@@ -87,6 +89,9 @@ impl Window {
       .application(app)
       .accept_focus(attributes.focused)
       .build();
+
+    gtk_layer_shell::init_for_window(&window);
+
     let window_id = WindowId(window.id());
     event_loop_window_target
       .windows
